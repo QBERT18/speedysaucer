@@ -74,5 +74,3 @@ If you're interested in contributing or modifying the project, follow these step
 3. **Build and run** the game from the editor.
 
 Feel free to explore the source code in the `src` folder, which contains the game's logic, maze generation, and UFO controls.
-
----
