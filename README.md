@@ -76,10 +76,3 @@ If you're interested in contributing or modifying the project, follow these step
 Feel free to explore the source code in the `src` folder, which contains the game's logic, maze generation, and UFO controls.
 
 ---
-
-## 📸 Screenshots
-
-![Speedy Saucer Screenshot](path/to/screenshot.jpg)
-*Example of the UFO navigating through the maze.*
-
----
