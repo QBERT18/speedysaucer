@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=3 uid="uid://5jhrt7oqsldp"]
+
+[ext_resource type="Texture2D" uid="uid://b04dhul7vu4iu" path="res://assets/darkPurple.png" id="1_704tr"]
+
+[sub_resource type="GDScript" id="GDScript_ku6v6"]
+script/source = "extends CollisionPolygon2D
+
+func _ready():
+	var poly = Polygon2D.new()
+	poly.set_polygon(PackedVector2Array([Vector2(40, 40),Vector2(40, 50),Vector2(50, 50),Vector2(50, 40)]))
+	add_child(poly)
+
+func _process(delta):
+	pass
+"
+
+[sub_resource type="GDScript" id="GDScript_alj17"]
+script/source = "extends Polygon2D
+
+func _ready():
+	var poly = Polygon2D.new()
+	poly.set_polygon(PackedVector2Array([Vector2(40, 40),Vector2(40, 50),Vector2(50, 50),Vector2(50, 40)]))
+	add_child(poly)
+
+func _process(delta):
+	pass
+"
+
+[node name="Maze" type="Area2D"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(138, 124, 133, 306, 248, 306, 240, 452, 352, 579, 273, 687, 502, 785, 719, 757, 779, 606, 949, 613, 1003, 466, 853, 376, 1064, 302, 868, 211, 1056, 113, 862, 35, 766, 131, 687, 39, 561, 125, 655, 253, 761, 183, 897, 92, 919, 121, 810, 209, 773, 243, 864, 292, 718, 368, 912, 500, 761, 504, 681, 654, 535, 688, 427, 641, 511, 540, 375, 421, 384, 289, 533, 296, 532, 127)
+script = SubResource("GDScript_ku6v6")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+texture = ExtResource("1_704tr")
+polygon = PackedVector2Array(138, 124, 133, 306, 248, 306, 240, 452, 352, 579, 273, 687, 502, 785, 719, 757, 779, 606, 949, 613, 1003, 466, 853, 376, 1064, 302, 868, 211, 1056, 113, 862, 35, 766, 131, 687, 39, 561, 125, 655, 253, 761, 183, 897, 92, 919, 121, 810, 209, 773, 243, 864, 292, 718, 368, 912, 500, 761, 504, 681, 654, 535, 688, 427, 641, 511, 540, 375, 421, 384, 289, 533, 296, 532, 127)
+script = SubResource("GDScript_alj17")

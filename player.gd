@@ -10,5 +10,3 @@ func _physics_process(delta):
 		apply_force(Vector2(0, force))
 	if Input.is_action_pressed("move_left"):
 		apply_force(Vector2(-force, 0))
-		
-	

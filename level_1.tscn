@@ -1,18 +1,65 @@
-[gd_scene load_steps=4 format=3 uid="uid://fb4dxf35d4ae"]
+[gd_scene load_steps=6 format=3 uid="uid://fb4dxf35d4ae"]
 
 [ext_resource type="Script" path="res://level.gd" id="1_drgbr"]
 [ext_resource type="Texture2D" uid="uid://dg7whacyg8sor" path="res://assets/purple.png" id="1_uqdii"]
 [ext_resource type="PackedScene" uid="uid://bwkx5sfyfwpu2" path="res://player.tscn" id="2_7bu7s"]
+[ext_resource type="PackedScene" uid="uid://5jhrt7oqsldp" path="res://maze.tscn" id="4_sjsii"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ufbk7"]
 
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_drgbr")
 
-[node name="Background" type="TextureRect" parent="."]
+[node name="Graphics" type="Node" parent="."]
+
+[node name="StartLabel" type="Label" parent="Graphics"]
+z_index = -25
+offset_left = 459.0
+offset_top = 64.0
+offset_right = 554.0
+offset_bottom = 109.0
+theme_override_font_sizes/font_size = 32
+text = "START"
+
+[node name="EndLabel" type="Label" parent="Graphics"]
+z_index = -25
+offset_left = 799.0
+offset_top = 52.0
+offset_right = 894.0
+offset_bottom = 97.0
+theme_override_font_sizes/font_size = 32
+text = "END"
+
+[node name="TutorialLabel" type="Label" parent="Graphics"]
+z_index = -25
+offset_left = -49.0
+offset_right = 301.0
+offset_bottom = 141.0
+theme_override_font_sizes/font_size = 16
+text = "Rules:
+Go from to Start to the End
+You will go back to start if you leave the track"
+label_settings = SubResource("LabelSettings_ufbk7")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Graphics"]
+layer = -10
+
+[node name="Background" type="TextureRect" parent="Graphics/CanvasLayer"]
 z_index = -100
 custom_minimum_size = Vector2(1152, 648)
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("1_uqdii")
 stretch_mode = 1
 
 [node name="Player" parent="." instance=ExtResource("2_7bu7s")]
+position = Vector2(504, 142)
+
+[node name="Maze" parent="." instance=ExtResource("4_sjsii")]
+z_index = -50
+position = Vector2(180, -70)
+
+[connection signal="body_exited" from="Maze" to="." method="_on_maze_body_exited"]
