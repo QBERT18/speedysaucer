@@ -1,7 +1,3 @@
-Sure! Here's a well-structured and beautifully written README for your *Speedy Saucer* game project on GitHub:
-
----
-
 # Speedy Saucer 🚀🛸
 
 Welcome to **Speedy Saucer**! A fun maze navigation game where you control a UFO trying to find its way through challenging mazes. Can you guide your saucer to victory? Play, enjoy, and master the art of UFO navigation!
